@@ -6,7 +6,28 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
+
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <Title>Salt.Extensions.DependencyInjection</Title>
+    <Authors>IamNaCl</Authors>
+    <Description>Semi-Automatic Dependency Injection Extensions for Microsoft's DI Container.</Description>
+    <Copyright>Copyright (C) Jeremy Cuevas (IamNaCl) and Contributors. All rights reserved.</Copyright>
+    <RepositoryUrl>https://github.com/IamNaCl/Salt.Extensions.DependencyInjection</RepositoryUrl>
+    <PackageTags>dependency-injection;di;microsoft.extensions.dependencyinjection</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Version>0.0.1</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
