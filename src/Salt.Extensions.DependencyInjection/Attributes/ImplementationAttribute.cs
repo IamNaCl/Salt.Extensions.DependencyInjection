@@ -14,7 +14,7 @@ public sealed class ImplementationAttribute : Attribute
 
     /// <summary>
     /// Gets or sets whether the same instance of this implementation should be shared across all interfaces that are
-    /// decorated with the <see cref="ServiceAttribute"/> class or not.
+    /// decorated with the <see cref="ServiceAttribute"/> class or not (defaults to <c>true</c>).
     /// </summary>
     /// <value>
     /// If <c>true</c> all service interfaces decorated with the <see cref="ServiceAttribute"/> class will share the

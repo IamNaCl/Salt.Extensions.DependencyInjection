@@ -21,13 +21,14 @@ public static partial class ServiceCollectionAutomaticExtensions
     /// <param name="lifetime">Service lifetime.</param>
     /// <param name="impl">Implementation type.</param>
     /// <param name="shared">Whether to share the same instance of a service for all interfaces.</param>
-    private static void AddBaseClass(IServiceCollection services, ServiceLifetime lifetime, Type impl, bool shared)
+    private static void AddBaseClass(IServiceCollection services, ServiceLifetime lifetime, Type impl,
+                                     bool shared, bool includeBaseClass)
     {
         var addFactoryFunc = lifetime.GetAddServiceFactoryFunc();
         var addSvcImplFunc = lifetime.GetAddServiceInterfaceFunc();
         var baseClass = impl.BaseType;
 
-        if (baseClass is object)
+        if (includeBaseClass && baseClass is object)
         {
             if (shared)
                 addFactoryFunc.Invoke(services, baseClass, _ => _.GetRequiredService(impl));
@@ -80,7 +81,7 @@ public static partial class ServiceCollectionAutomaticExtensions
             addImplFunc.Invoke(services, implType);
 
             // Registers the base class, if present.
-            AddBaseClass(services, attr.Lifetime, implType, attr.Shared);
+            AddBaseClass(services, attr.Lifetime, implType, attr.Shared, attr.WithBaseClass);
 
             // Then register all the interfaces.
             AddInterfaces(services, attr.Lifetime, implType, interfaces, attr.Shared);
