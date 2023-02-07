@@ -6,6 +6,7 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>Microsoft.Extensions.DependencyInjection</RootNamespace>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
 
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <Title>Salt.Extensions.DependencyInjection</Title>
