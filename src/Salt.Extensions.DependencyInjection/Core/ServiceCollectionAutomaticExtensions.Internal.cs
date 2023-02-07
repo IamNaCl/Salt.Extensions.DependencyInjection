@@ -5,8 +5,9 @@ namespace Microsoft.Extensions.DependencyInjection;
 public static partial class ServiceCollectionAutomaticExtensions
 {
     /// <summary>
-    /// Checks whetehr a given assembly has been added to the service collection.
+    /// Checks whether a given assembly has been added to the service collection.
     /// </summary>
+    /// <param name="services">Service collection to be checked.</param>
     /// <param name="assembly">Assembly used for lookup.</param>
     /// <returns>
     /// <c>true</c> if the provided assembly has been added to the service collection, otherwise <c>false</c>.
@@ -21,6 +22,7 @@ public static partial class ServiceCollectionAutomaticExtensions
     /// <param name="lifetime">Service lifetime.</param>
     /// <param name="impl">Implementation type.</param>
     /// <param name="shared">Whether to share the same instance of a service for all interfaces.</param>
+    /// <param name="includeBaseClass">Whether to include the base class.</param>
     private static void AddBaseClass(IServiceCollection services, ServiceLifetime lifetime, Type impl,
                                      bool shared, bool includeBaseClass)
     {
