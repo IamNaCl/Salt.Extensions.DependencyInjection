@@ -16,7 +16,7 @@
     <RepositoryUrl>https://github.com/IamNaCl/Salt.Extensions.DependencyInjection</RepositoryUrl>
     <PackageTags>dependency-injection;di;microsoft.extensions.dependencyinjection</PackageTags>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
